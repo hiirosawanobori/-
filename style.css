@@ -1,0 +1,566 @@
+
+/* =========================
+   全体
+========================= */
+
+body {
+    font-family: "Hiragino Kaku Gothic ProN",
+                 "Yu Gothic",
+                 "Meiryo",
+                 sans-serif;
+
+    background: #f3f4f6;
+    color: #333;
+
+    text-align: center;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================
+   各画面
+========================= */
+
+.screen {
+    width: 90%;
+    max-width: 700px;
+
+    margin: 60px auto;
+
+    padding: 35px 25px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   見出し
+========================= */
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+
+/* =========================
+   説明文
+========================= */
+
+p {
+    font-size: 21px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   ボタン
+========================= */
+
+button {
+    padding: 16px 35px;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    border-radius: 14px;
+   background: #64748b;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:hover {
+    background: #64748b;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+
+/* =========================
+   選択肢ボタン
+========================= */
+
+.choiceButton {
+    width: 90%;
+    max-width: 500px;
+
+    min-height: 90px;
+
+    margin: 10px auto;
+
+    padding: 18px;
+
+    background: white;
+
+    color: #333;
+
+    border: 3px solid #42a5f5;
+
+    border-radius: 15px;
+
+    line-height: 1.5;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+
+    transition: 0.2s;
+}
+
+.choiceButton:hover {
+    background: #f3f4f6;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   ポイント表示
+========================= */
+
+#pointArea {
+    margin: 25px auto;
+    padding: 15px;
+
+    max-width: 500px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#pointArea p {
+    margin: 4px 0;
+    padding: 8px 12px;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+    background: #f8fbff;
+}
+#actionPoint {
+    color: #f57c00;
+    font-weight: bold;
+}
+#disasterPoint {
+    color: #43a047;
+    font-weight: bold;
+}
+#happyPoint {
+    color: #f9a825;
+    font-weight: bold;
+}
+
+
+/* =========================
+   名前入力
+========================= */
+
+input {
+    font-size: 20px;
+
+    padding: 10px;
+
+    width: 250px;
+
+    border: 2px solid #90caf9;
+
+    border-radius: 8px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   人数選択
+========================= */
+
+select {
+    font-size: 24px;
+
+    padding: 10px 20px;
+
+    border: 2px solid #90caf9;
+
+    border-radius: 8px;
+}
+
+
+/* =========================
+   結果発表
+========================= */
+
+#resultArea {
+    text-align: left;
+}
+
+#resultArea h3 {
+    text-align: center;
+
+    font-size: 28px;
+}
+
+#resultArea p {
+    font-size: 19px;
+}
+
+#resultArea hr {
+    margin: 30px 0;
+
+    border: none;
+
+    border-top: 2px solid #90caf9;
+}
+
+
+/* =========================
+   フリガナ
+========================= */
+
+ruby {
+    ruby-position: over;
+}
+
+rt {
+    font-size: 0.55em;
+}
+#startScreen {
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
+    border: 3px solid #90caf9;
+}
+
+#startScreen h1 {
+    color: #1565c0;
+    font-size: 44px;
+}
+
+#startScreen p {
+    color: #555;
+    font-size: 23px;
+    font-weight: bold;
+}
+#dailyScreen #turnTitle {
+    color: #1565c0;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+#dailyScreen #dailyResident {
+    background: #e3f2fd;
+    padding: 10px;
+    border-radius: 12px;
+    display: inline-block;
+    min-width: 200px;
+}
+#policyScreen h2 {
+    color: #1565c0;
+    line-height: 1.6;
+}
+
+#policyScreen h3 {
+    background: #e3f2fd;
+    padding: 12px 20px;
+    border-radius: 12px;
+    display: inline-block;
+    min-width: 180px;
+}
+#resultScreen h2 {
+    color: #1565c0;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+#resultArea {
+    background: #f8fbff;
+    padding: 20px;
+    border-radius: 15px;
+}
+#resultArea h3 {
+    color: #1565c0;
+    font-size: 30px;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+#resultArea p {
+    background: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin: 8px 0;
+}
+/* =========================
+   スマートフォン対応
+========================= */
+
+@media (max-width: 600px) {
+
+    .screen {
+        width: 94%;
+        margin: 25px auto;
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    h2 {
+        font-size: 27px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 19px;
+        padding: 14px 25px;
+    }
+
+    .choiceButton {
+        width: 100%;
+        min-height: 85px;
+        font-size: 18px;
+        padding: 15px 10px;
+    }
+
+    #pointArea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    input {
+        width: 90%;
+        max-width: 250px;
+    }
+
+    select {
+        font-size: 20px;
+    }
+}
+/* =========================
+   住民ごとのテーマカラー
+========================= */
+
+/* 1人目 */
+#dailyScreen.player1 {
+    border: 4px solid #ef5350;
+    background: #fff5f5;
+}
+
+/* 2人目 */
+#dailyScreen.player2 {
+    border: 4px solid #42a5f5;
+    background: #f3f9ff;
+}
+
+/* 3人目 */
+#dailyScreen.player3 {
+    border: 4px solid #66bb6a;
+    background: #f4fbf4;
+}
+
+/* 4人目 */
+#dailyScreen.player4 {
+    border: 4px solid #ffa726;
+    background: #fff9f0;
+}
+
+/* 5人目 */
+#dailyScreen.player5 {
+    border: 4px solid #ab47bc;
+    background: #faf5fc;
+}
+
+/* 6人目 */
+#dailyScreen.player6 {
+    border: 4px solid #26a69a;
+    background: #f2fbfa;
+}
+/* 住民の名前を目立たせる */
+#dailyScreen #dailyResident {
+    font-size: 28px;
+    font-weight: bold;
+    padding: 14px 22px;
+    border-radius: 14px;
+    margin: 15px auto 25px;
+}
+
+/* 1人目：赤 */
+#dailyScreen.player1 #dailyResident {
+    background: #ffebee;
+    color: #c62828;
+}
+
+/* 2人目：青 */
+#dailyScreen.player2 #dailyResident {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+/* 3人目：緑 */
+#dailyScreen.player3 #dailyResident {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+/* 4人目：オレンジ */
+#dailyScreen.player4 #dailyResident {
+    background: #fff3e0;
+    color: #e65100;
+}
+
+/* 5人目：紫 */
+#dailyScreen.player5 #dailyResident {
+    background: #f3e5f5;
+    color: #7b1fa2;
+}
+
+/* 6人目：青緑 */
+#dailyScreen.player6 #dailyResident {
+    background: #e0f2f1;
+    color: #00796b;
+}
+/* ターン数を目立たせる */
+
+#dailyScreen #turnTitle {
+    background: #f3f4f6;
+    color: #374151;
+    padding: 14px;
+    border-radius: 14px;
+    border-bottom: 4px solid #9ca3af;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+}
+/* ポイント表示を住民カラーに合わせる */
+#dailyScreen.player1 #pointArea {
+    border-color: #ef5350;
+}
+
+#dailyScreen.player2 #pointArea {
+    border-color: #42a5f5;
+}
+
+#dailyScreen.player3 #pointArea {
+    border-color: #66bb6a;
+}
+
+#dailyScreen.player4 #pointArea {
+    border-color: #ffa726;
+}
+
+#dailyScreen.player5 #pointArea {
+    border-color: #ab47bc;
+}
+
+#dailyScreen.player6 #pointArea {
+    border-color: #26a69a;
+}
+/* 住民ごとの選択肢カラー */
+
+/* 1人目：赤 */
+#dailyScreen.player1 .choiceButton {
+    border-color: #ef5350;
+}
+
+/* 2人目：青 */
+#dailyScreen.player2 .choiceButton {
+    border-color: #42a5f5;
+}
+
+/* 3人目：緑 */
+#dailyScreen.player3 .choiceButton {
+    border-color: #66bb6a;
+}
+
+/* 4人目：オレンジ */
+#dailyScreen.player4 .choiceButton {
+    border-color: #ffa726;
+}
+
+/* 5人目：紫 */
+#dailyScreen.player5 .choiceButton {
+    border-color: #ab47bc;
+}
+
+/* 6人目：青緑 */
+#dailyScreen.player6 .choiceButton {
+    border-color: #26a69a;
+}
+/* 共通画面の見出し色 */
+.screen h2 {
+    color: #374151;
+}
+/* 政策投票ボタン */
+#agreeButton {
+    background: #43a047;
+}
+
+#agreeButton:hover {
+    background: #2e7d32;
+}
+
+#disagreeButton {
+    background: #e57373;
+}
+
+#disagreeButton:hover {
+    background: #d32f2f;
+}
+/* 災害発生画面 */
+#disasterScreen {
+    background: #fff7ed;
+    border: 3px solid #fb923c;
+}
+
+#disasterScreen h2 {
+    color: #c2410c;
+}
+
+#disasterScreen p {
+    color: #7c2d12;
+    font-weight: bold;
+}
+/* 結果発表画面 */
+#resultScreen {
+    background: #fffbeb;
+    border: 3px solid #fbbf24;
+}
+
+#resultScreen h2 {
+    color: #92400e;
+}
+/* 結果発表の順位表示 */
+#resultArea h3:first-of-type {
+    background: #fef3c7;
+    border: 2px solid #fbbf24;
+    border-radius: 12px;
+    padding: 12px;
+}
