@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>防災学習ゲーム</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- スタート画面 -->
+<div id="startScreen" class="screen">
+
+    <h1>
+    <ruby>防災<rt>ぼうさい</rt></ruby>
+    <ruby>学習<rt>がくしゅう</rt></ruby>
+    ゲーム
+</h1>
+
+<p>
+    <ruby>日常<rt>にちじょう</rt></ruby>の
+    <ruby>選択<rt>せんたく</rt></ruby>が
+    <ruby>未来<rt>みらい</rt></ruby>を
+    <ruby>変<rt>か</rt></ruby>える！
+</p>
+
+<button id="startButton">
+    ゲームスタート
+</button>
+
+</div>
+
+
+<!-- 人数設定 -->
+<div id="playerScreen" class="screen" style="display:none;">
+
+    <h2>
+    <ruby>住民<rt>じゅうみん</rt></ruby>の
+    <ruby>人数<rt>にんずう</rt></ruby>
+</h2>
+
+<select id="playerCount">
+
+    <option value="2">2人</option>
+    <option value="3">3人</option>
+    <option value="4">4人</option>
+    <option value="5" selected>5人</option>
+    <option value="6">6人</option>
+
+</select>
+
+<br><br>
+
+<button id="nextButton">
+    <ruby>次<rt>つぎ</rt></ruby>へ
+</button>
+
+</div>
+
+
+<!-- 名前入力 -->
+<div id="nameScreen" class="screen" style="display:none;">
+
+    <h2>
+    <ruby>住民<rt>じゅうみん</rt></ruby>の
+    <ruby>名前<rt>なまえ</rt></ruby>を
+    <ruby>入力<rt>にゅうりょく</rt></ruby>してください
+</h2>
+
+<div id="nameInputs"></div>
+
+<br>
+
+<button id="gameStartButton">
+    ゲーム<ruby>開始<rt>かいし</rt></ruby>
+</button>
+
+</div>
+
+
+<!-- 政策投票 -->
+<div id="policyScreen" class="screen" style="display:none;">
+
+ <h2>
+    <ruby>市長<rt>しちょう</rt></ruby>の
+    お<ruby>話<rt>はなし</rt></ruby>を
+    <ruby>聞<rt>き</rt></ruby>いて、<br>
+    <ruby>協力<rt>きょうりょく</rt></ruby>するか
+    <ruby>選<rt>えら</rt></ruby>ぼう！
+</h2>
+
+<h3 id="residentTurn"></h3>
+
+<br>
+
+<button id="agreeButton">
+    <ruby>協力<rt>きょうりょく</rt></ruby>する
+</button>
+
+<br><br>
+
+<button id="disagreeButton">
+    <ruby>協力<rt>きょうりょく</rt></ruby>しない
+</button>
+
+</div>
+
+<!-- 政策結果画面 -->
+<div id="policyResultScreen" class="screen" style="display:none;">
+
+    <h2 id="policyResultText"></h2>
+
+    <br><br>
+
+   <button id="policyNextButton">
+    <ruby>次<rt>つぎ</rt></ruby>へ
+</button>
+
+</div>
+
+
+
+
+<!-- 日常ターン -->
+<div id="dailyScreen" class="screen" style="display:none;">
+
+    <h2 id="turnTitle">
+        日常ターン
+    </h2>
+
+   <h2 id="turnTitle">
+    <ruby>日常<rt>にちじょう</rt></ruby>ターン
+</h2>
+
+<h3 id="dailyResident"></h3>
+
+<div id="pointArea">
+
+<p>
+    <ruby>行動<rt>こうどう</rt></ruby>ポイント：
+    <span id="actionPoint">0</span>
+</p>
+
+<p>
+    <ruby>防災<rt>ぼうさい</rt></ruby>ポイント：
+    <span id="disasterPoint">0</span>
+</p>
+
+<p>
+    ハッピーポイント：
+    <span id="happyPoint">0</span>
+</p>
+
+</div>
+
+<p>
+    <ruby>行動<rt>こうどう</rt></ruby>を
+    <ruby>選<rt>えら</rt></ruby>ぼう！
+</p>
+
+<div id="choiceArea"></div>
+
+
+</div><!-- ミニゲーム結果入力 -->
+<div id="miniGameScreen" class="screen" style="display:none;">
+
+    <h2>ミニゲーム結果</h2>
+
+    <p>GMが報酬ポイントを入力してください。</p>
+
+    <div id="miniGameArea"></div>
+
+    <br>
+
+    <button id="miniGameNextButton">
+        決定
+    </button>
+
+</div>
+
+<!-- 自然災害発生画面 -->
+<div id="disasterScreen" class="screen" style="display:none;">
+
+    <h2>
+    <ruby>自然災害<rt>しぜんさいがい</rt></ruby>が
+    <ruby>発生<rt>はっせい</rt></ruby>
+</h2>
+
+<p>
+    <ruby>全員<rt>ぜんいん</rt></ruby>の
+    ハッピーポイントが3ポイントずつ
+    <ruby>失<rt>うしな</rt></ruby>われました。
+</p>
+
+<br>
+
+<button id="disasterNextButton">
+    <ruby>次<rt>つぎ</rt></ruby>へ
+</button>
+
+</div>
+
+<!-- 結果発表画面 -->
+<div id="resultScreen" class="screen" style="display:none;">
+
+    <h2>
+    <ruby>結果<rt>けっか</rt></ruby>
+    <ruby>発表<rt>はっぴょう</rt></ruby>
+</h2>
+
+<div id="resultArea"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
