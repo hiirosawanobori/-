@@ -1092,3 +1092,12 @@ height: 500px !important;
     margin-top: 3px !important;
     margin-bottom: 5px !important;
 }
+/* iPad縦向け：行動選択画面 */
+@media (min-width: 700px) and (max-width: 1100px) and (orientation: portrait) {
+
+    #dailyScreen {
+        background-size: 100% auto;
+        background-position: top center;
+    }
+
+}
