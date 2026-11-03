@@ -99,6 +99,8 @@ nextButton.addEventListener("click", function () {
 
     playerScreen.style.display = "none";
     nameScreen.style.display = "block";
+    window.scrollTo(0, 0);
+
 
     const area = document.getElementById("nameInputs");
     area.innerHTML = "";
@@ -181,10 +183,12 @@ residentNames[currentResident-1] + " さんの番です";
     policyScreen.style.display = "none";
     policyResultScreen.style.display = "block";
 
-   if(agreeCount > residentTotal / 2){
+ if(agreeCount > residentTotal / 2){
 
     document.getElementById("policyResultText").innerHTML =
     "協力することに決まりました！";
+
+    document.getElementById("policyResultText").style.color = "#556b2f";
 
     // 全員に配点
     for(let i = 0; i < residentTotal; i++){
@@ -199,9 +203,13 @@ residentNames[currentResident-1] + " さんの番です";
     document.getElementById("policyResultText").innerHTML =
     "協力しないことに決まりました！";
 
+    document.getElementById("policyResultText").style.color = "#7a263a";
+
     // 不参加ならポイント変動なし
 
 }
+
+
 
 }
 
@@ -233,7 +241,19 @@ function showDailyTurn(){
 
     disasterScreen.style.display = "none";
 
-    miniGameScreen.style.display = "none";   // ←追加
+    miniGameScreen.style.display = "none";   
+    // 日常ターンの背景画像を変更
+if (currentTurn === 3) {
+    document.getElementById("dailyScreen").style.backgroundImage =
+        "url('images/select-day3.png')";
+} else if (currentTurn === 2) {
+    document.getElementById("dailyScreen").style.backgroundImage =
+        "url('images/select-day2.png')";
+} else {
+    document.getElementById("dailyScreen").style.backgroundImage =
+        "url('images/select-day1.png')";
+}
+    // ←追加
 
     document.getElementById("dailyScreen").style.display = "block";
     document.getElementById("dailyScreen").className = "screen player" + currentResident;
@@ -511,25 +531,25 @@ let previousPoint = -99999;
     ${rank}位　${player.name}さん
 </h3>
 
-<p>
-    <ruby>獲得<rt>かくとく</rt></ruby>ポイント：
-    ${player.total}
-</p>
+<div class="resultPoints">
 
-<p>
-    <ruby>行動<rt>こうどう</rt></ruby>ポイント：
-    ${player.action}
-</p>
+    <span>
+        <ruby>獲得<rt>かくとく</rt></ruby>：${player.total}
+    </span>
 
-<p>
-    <ruby>防災<rt>ぼうさい</rt></ruby>ポイント：
-    ${player.disaster}
-</p>
+    <span>
+        <ruby>行動<rt>こうどう</rt></ruby>：${player.action}
+    </span>
 
-<p>
-    ハッピーポイント：
-    ${player.happy}
-</p>
+    <span>
+        <ruby>防災<rt>ぼうさい</rt></ruby>：${player.disaster}
+    </span>
+
+    <span>
+        ハッピー：${player.happy}
+    </span>
+
+</div>
 
 <p>
     <ruby>行動履歴<rt>こうどうりれき</rt></ruby>
@@ -539,15 +559,12 @@ let previousPoint = -99999;
 
         ${player.history.map((h,i)=>`
 
-            <li>
-    <ruby>ターン<rt>たーん</rt></ruby>${i+1}<br>
-    ${h.name}<br>
-    <ruby>行動<rt>こうどう</rt></ruby>：
-    ${h.action}<br>
-    <ruby>防災<rt>ぼうさい</rt></ruby>：
-    ${h.disaster}<br>
-    ハッピー：
-    ${h.happy}
+           <li>
+    ターン${i+1}：
+    ${h.name}
+    （<ruby>行動<rt>こうどう</rt></ruby>${h.action} /
+    <ruby>防災<rt>ぼうさい</rt></ruby>${h.disaster} /
+    ハッピー${h.happy}）
 </li>
 
         `).join("")}

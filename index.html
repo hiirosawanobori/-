@@ -13,21 +13,13 @@
 <!-- スタート画面 -->
 <div id="startScreen" class="screen">
 
-    <h1>
-    <ruby>防災<rt>ぼうさい</rt></ruby>
-    <ruby>学習<rt>がくしゅう</rt></ruby>
-    ゲーム
+   <h1 class="gameLogo">
+    <img src="images/logo.png" alt="MISSION! ぼうさいタウン">
 </h1>
 
-<p>
-    <ruby>日常<rt>にちじょう</rt></ruby>の
-    <ruby>選択<rt>せんたく</rt></ruby>が
-    <ruby>未来<rt>みらい</rt></ruby>を
-    <ruby>変<rt>か</rt></ruby>える！
-</p>
 
-<button id="startButton">
-    ゲームスタート
+<button id="startButton" aria-label="ゲームスタート">
+    <img src="images/start.png" alt="ゲームスタート">
 </button>
 
 </div>
@@ -36,26 +28,21 @@
 <!-- 人数設定 -->
 <div id="playerScreen" class="screen" style="display:none;">
 
-    <h2>
-    <ruby>住民<rt>じゅうみん</rt></ruby>の
-    <ruby>人数<rt>にんずう</rt></ruby>
-</h2>
+    
 
-<select id="playerCount">
+    <select id="playerCount">
+        <option value="2">2人</option>
+        <option value="3">3人</option>
+        <option value="4">4人</option>
+        <option value="5" selected>5人</option>
+        <option value="6">6人</option>
+    </select>
 
-    <option value="2">2人</option>
-    <option value="3">3人</option>
-    <option value="4">4人</option>
-    <option value="5" selected>5人</option>
-    <option value="6">6人</option>
+    <br><br>
 
-</select>
-
-<br><br>
-
-<button id="nextButton">
-    <ruby>次<rt>つぎ</rt></ruby>へ
-</button>
+    <button id="nextButton" aria-label="次へ">
+        <img src="images/next.png" alt="次へ">
+    </button>
 
 </div>
 
@@ -73,8 +60,8 @@
 
 <br>
 
-<button id="gameStartButton">
-    ゲーム<ruby>開始<rt>かいし</rt></ruby>
+<button id="gameStartButton" aria-label="次へ">
+    <img src="images/next.png" alt="次へ">
 </button>
 
 </div>
@@ -114,8 +101,8 @@
 
     <br><br>
 
-   <button id="policyNextButton">
-    <ruby>次<rt>つぎ</rt></ruby>へ
+   <button id="policyNextButton" aria-label="次へ">
+    <img src="images/next.png" alt="次へ">
 </button>
 
 </div>
@@ -124,15 +111,10 @@
 
 
 <!-- 日常ターン -->
+<!-- 日常ターン -->
 <div id="dailyScreen" class="screen" style="display:none;">
 
-    <h2 id="turnTitle">
-        日常ターン
-    </h2>
-
-   <h2 id="turnTitle">
-    <ruby>日常<rt>にちじょう</rt></ruby>ターン
-</h2>
+    <h2 id="turnTitle" style="display:none;"></h2>
 
 <h3 id="dailyResident"></h3>
 
@@ -155,10 +137,6 @@
 
 </div>
 
-<p>
-    <ruby>行動<rt>こうどう</rt></ruby>を
-    <ruby>選<rt>えら</rt></ruby>ぼう！
-</p>
 
 <div id="choiceArea"></div>
 
@@ -183,16 +161,6 @@
 <!-- 自然災害発生画面 -->
 <div id="disasterScreen" class="screen" style="display:none;">
 
-    <h2>
-    <ruby>自然災害<rt>しぜんさいがい</rt></ruby>が
-    <ruby>発生<rt>はっせい</rt></ruby>
-</h2>
-
-<p>
-    <ruby>全員<rt>ぜんいん</rt></ruby>の
-    ハッピーポイントが3ポイントずつ
-    <ruby>失<rt>うしな</rt></ruby>われました。
-</p>
 
 <br>
 
@@ -205,10 +173,7 @@
 <!-- 結果発表画面 -->
 <div id="resultScreen" class="screen" style="display:none;">
 
-    <h2>
-    <ruby>結果<rt>けっか</rt></ruby>
-    <ruby>発表<rt>はっぴょう</rt></ruby>
-</h2>
+
 
 <div id="resultArea"></div>
 

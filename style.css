@@ -247,21 +247,7 @@ ruby {
 rt {
     font-size: 0.55em;
 }
-#startScreen {
-    background: linear-gradient(135deg, #e3f2fd, #ffffff);
-    border: 3px solid #90caf9;
-}
 
-#startScreen h1 {
-    color: #1565c0;
-    font-size: 44px;
-}
-
-#startScreen p {
-    color: #555;
-    font-size: 23px;
-    font-weight: bold;
-}
 #dailyScreen #turnTitle {
     color: #1565c0;
     font-size: 34px;
@@ -372,37 +358,37 @@ rt {
 /* 1人目 */
 #dailyScreen.player1 {
     border: 4px solid #ef5350;
-    background: #fff5f5;
+    background-color: #fff5f5;
 }
 
 /* 2人目 */
 #dailyScreen.player2 {
     border: 4px solid #42a5f5;
-    background: #f3f9ff;
+    background-color: #f3f9ff;
 }
 
 /* 3人目 */
 #dailyScreen.player3 {
     border: 4px solid #66bb6a;
-    background: #f4fbf4;
+    background-color: #f4fbf4;
 }
 
 /* 4人目 */
 #dailyScreen.player4 {
     border: 4px solid #ffa726;
-    background: #fff9f0;
+    background-color: #fff9f0;
 }
 
 /* 5人目 */
 #dailyScreen.player5 {
     border: 4px solid #ab47bc;
-    background: #faf5fc;
+    background-color: #faf5fc;
 }
 
 /* 6人目 */
 #dailyScreen.player6 {
     border: 4px solid #26a69a;
-    background: #f2fbfa;
+    background-color: #f2fbfa;
 }
 /* 住民の名前を目立たせる */
 #dailyScreen #dailyResident {
@@ -563,4 +549,546 @@ rt {
     border: 2px solid #fbbf24;
     border-radius: 12px;
     padding: 12px;
+}
+/* 街並みの背景画像 */
+body {
+  background-image: url("images/background.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+/* スタート画面のロゴサイズ */
+ .gameLogo img {
+  width: 80%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* スタートボタンの位置 */
+#startButton {
+    display: block;
+    position: static;
+    left: auto;
+    transform: none;
+    margin: 10px auto 0;
+}
+#startScreen {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#startScreen h1.gameLogo {
+    width: 100%;
+    margin: 0;
+}
+
+#startScreen h1.gameLogo img {
+    width: 120% !important;
+    max-width: 1200px !important;
+    height: auto !important;
+    display: block !important;
+    position: static !important;
+    transform: none !important;
+    margin: 0 0 0 -10% !important;
+}
+/* スタートボタンのデザイン */
+#startButton {
+    font-family: "Yu Mincho", "YuMincho",
+                 "Hiragino Mincho ProN",
+                 "Noto Serif JP", serif;
+    font-weight: 900;
+    font-size: 26px;
+
+    color: #d8c29a;
+    -webkit-text-stroke: 1px white;
+    paint-order: stroke fill;
+
+    background: linear-gradient(
+        145deg,
+        #f1dfb9,
+        #b99a68
+    );
+
+    border: 2px solid #fff0d2;
+    border-radius: 16px;
+
+    padding: 16px 48px;
+
+    box-shadow:
+        0 5px 12px rgba(65, 43, 20, 0.3),
+        inset 0 2px 3px rgba(255,255,255,0.5);
+}
+/* スタート画像ボタンのサイズ調整 */
+#startButton {
+    width: 500px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    margin: -300px auto 0;
+}
+
+#startButton img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/* 人数選択画面 */
+#playerScreen {
+    position: relative;
+
+    width: 100vw;
+    max-width: none;
+
+    /* 1668×2224 の比率で高さを決める */
+    height: calc(100vw * 2224 / 1668);
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    background-image: url("images/player-select.png");
+    background-size: 100% 100%;
+    background-position: top left;
+    background-repeat: no-repeat;
+
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    box-sizing: border-box;
+}
+/* 人数選択画面の「次へ」画像ボタン */
+#nextButton {
+    width: 500px;
+    position: absolute;
+top: 45%;
+left: 50%;
+transform: translateX(-50%);
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+#nextButton img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#nextButton:hover {
+    background: transparent !important;
+}
+
+/* 人数選択のプルダウン位置 */
+#playerCount {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+   font-size: 50px;
+padding: 22px 55px;
+}
+html, body {
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+/* 人数選択を「次へ」ボタンより手前にする */
+#playerCount {
+    z-index: 10;
+}
+
+#nextButton {
+    z-index: 5;
+}
+/* 名前入力画面 */
+#nameScreen {
+    position: relative;
+    top: 0;
+
+    width: 100vw;
+    max-width: none;
+
+    height: calc(100vw * 2224 / 1668);
+    min-height: 100vh;
+
+    margin: 0 !important;
+    padding: 0;
+
+    background-image: url("images/name-input.png");
+    background-size: 100% 100%;
+    background-position: top left;
+    background-repeat: no-repeat;
+
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    box-sizing: border-box;
+}
+/* 名前入力画面の元の見出しを非表示 */
+#nameScreen > h2 {
+    display: none;
+}
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+/* 名前入力欄全体の位置 */
+#nameInputs {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    text-align: center;
+}
+/* 名前入力画面の「次へ」画像ボタン */
+#gameStartButton {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 500px;
+    padding: 0 !important;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#gameStartButton img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#gameStartButton:hover {
+    background: transparent !important;
+}
+/* 市長・政策投票画面 */
+#policyScreen {
+    position: relative;
+
+    width: 100vw;
+    max-width: none;
+
+    /* mayor.png：1668 × 2224 */
+    height: calc(100vw * 2224 / 1668);
+    min-height: 100vh;
+
+    margin: 0 !important;
+    padding: 0;
+
+    background-image: url("images/mayor.png");
+    background-size: 100% 100%;
+    background-position: top left;
+    background-repeat: no-repeat;
+
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    box-sizing: border-box;
+}
+/* 市長画面の元の見出しを非表示 */
+#policyScreen > h2 {
+    display: none;
+}
+/* 市長画面：○○さんの番です */
+#policyScreen #residentTurn {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    z-index: 10;
+}
+/* 「協力する」ボタン */
+#agreeButton {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 「協力しない」ボタン */
+#disagreeButton {
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* 「○○さんの番です」 */
+#policyScreen #residentTurn {
+    background: #4a3428;
+    color: white;
+
+    padding: 18px 35px;
+    border-radius: 0;
+}
+
+/* 「協力する」 */
+#agreeButton {
+    background: #556b2f !important;
+    color: white !important;
+
+    border-radius: 0 !important;
+}
+
+/* 「協力しない」 */
+#disagreeButton {
+    background: #7a263a !important;
+    color: white !important;
+
+    border-radius: 0 !important;
+}
+
+/* 政策結果画面の「次へ」画像ボタン */
+#policyNextButton {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+
+    width: 500px !important;
+    height: auto !important;
+}
+
+#policyNextButton img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#policyNextButton:hover {
+    background: transparent !important;
+}
+/* 政策結果画面の次へボタン位置 */
+#policyNextButton {
+    position: relative;
+    top: -180px;
+}
+/* 政策結果画面の白い背景・枠を消す */
+#policyResultScreen {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+/* 「協力する／しないことに決まりました！」を目立たせる */
+#policyResultText {
+    font-size: 42px;
+    font-weight: bold;
+
+    -webkit-text-stroke: 2px white;
+
+    text-shadow:
+    1px 0 0 currentColor,
+    -1px 0 0 currentColor,
+    0 1px 0 currentColor,
+    0 -1px 0 currentColor,
+    0 3px 6px rgba(0, 0, 0, 0.25);
+}
+/* 日常ターン1 選択画面 */
+#dailyScreen {
+    position: relative;
+
+    width: 100vw;
+    max-width: none;
+
+    height: 2224px;
+    min-height: 100vh;
+
+    margin: 0 !important;
+    padding: 0;
+
+    background-image: url("images/select-day1.png") ;
+background-size: auto 100%;
+background-position: top center;
+background-repeat: no-repeat;
+
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    box-sizing: border-box;
+}
+/* 「○○さんの番！」の位置調整 */
+#dailyScreen #dailyResident {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    z-index: 10;
+}
+/* 選択肢を「○○さんの番！」より下へ移動 */
+#dailyScreen #choiceArea {
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+/* ポイント表示を下へ移動 */
+#dailyScreen #pointArea {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    z-index: 10;
+}/* 災害発生画面 */
+#disasterScreen {
+    position: relative;
+
+    width: 100vw;
+    max-width: none;
+
+    height: calc(100vw * 2224 / 1668);
+    min-height: 100vh;
+
+    margin: 0 !important;
+    padding: 0;
+
+    background-image: url("images/disaster.png") !important;
+    background-size: 100% 100%;
+    background-position: top left;
+    background-repeat: no-repeat;
+
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    box-sizing: border-box;
+}
+/* 災害発生画面の「次へ」ボタン */
+#disasterScreen button {
+    background-image: url("images/next.png") !important;
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+
+    width: 500px !important;
+height: 500px !important;
+
+    font-size: 0;
+}
+#disasterScreen button {
+    position: relative;
+    top: 1100px;
+}
+/* 結果発表画面 */
+#resultScreen {
+    position: relative;
+
+    width: 100vw;
+    max-width: none;
+
+    height: calc(100vw * 2224 / 1668);
+    min-height: 100vh;
+
+    margin: 0 !important;
+    padding: 0;
+
+    background-image: url("images/result.png") !important;
+    background-size: 100% 100%;
+    background-position: top left;
+    background-repeat: no-repeat;
+
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    box-sizing: border-box;
+}
+#resultScreen {
+    font-size: 70%;
+}
+#resultArea {
+    transform: translate(100px, 350px) scale(0.85);
+    transform-origin: top center;
+}
+#resultArea {
+    background: transparent !important;
+}
+
+#resultArea > * {
+    background-color: transparent !important;
+}
+#resultArea h3 {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+#resultScreen {
+    background-repeat: no-repeat !important;
+}
+/* 結果画面：ポイントを横並び */
+#resultArea .resultPoints {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    font-size: 20px;
+    margin: 15px 0;
+}
+/* 結果画面：行動履歴を中央寄せ */
+#resultArea ol {
+    width: 700px;
+    margin: 10px auto 20px;
+    padding-left: 0;
+    text-align: left;
+}
+
+#resultArea ol li {
+    margin: 5px 0;
+}
+/* 結果画面：「行動履歴」を中央に */
+#resultArea > p {
+    text-align: center;
+    margin: 8px 0;
+}
+#resultArea hr {
+    margin: 5px 0 !important;
+}
+
+#resultArea h3 {
+    margin: 5px 0 !important;
+}
+
+#resultArea .resultPoints {
+    margin: 5px 0 !important;
+}
+
+#resultArea > p {
+    margin: 3px 0 !important;
+}
+
+#resultArea ol {
+    margin-top: 3px !important;
+    margin-bottom: 5px !important;
 }
