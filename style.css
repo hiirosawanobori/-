@@ -911,7 +911,7 @@ body {
     width: 100vw;
     max-width: none;
 
-    height: 2224px;
+    height: calc(100vw * 2224 / 1668);
     min-height: 100vh;
 
     margin: 0 !important;
