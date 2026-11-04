@@ -1248,3 +1248,42 @@ textarea:focus {
 
     text-shadow: none !important;
 }
+/* iPad縦画面：選択肢の重なりを修正 */
+@media (min-width: 700px) and (max-width: 1100px) and (orientation: portrait) {
+
+    #dailyScreen #choiceArea {
+        top: 72% !important;
+    }
+
+}
+/* iPad縦画面：行動選択画面を全体的に縮小 */
+@media (min-width: 700px) and (max-width: 1100px) and (orientation: portrait) {
+
+    /* ○○さんの番です */
+    #dailyScreen #dailyResident {
+        top: 35% !important;
+        transform: translateX(-50%) scale(0.8) !important;
+    }
+
+    /* ポイント表示 */
+    #dailyScreen #pointArea {
+        top: 43% !important;
+        transform: translateX(-50%) scale(0.8) !important;
+    }
+
+    /* 行動選択肢 */
+    #dailyScreen #choiceArea {
+        top: 59% !important;
+        transform: translateX(-50%) scale(0.8) !important;
+    }
+
+}
+/* iPad縦画面：行動選択肢の間隔を縮める */
+@media (min-width: 700px) and (max-width: 1100px) and (orientation: portrait) {
+
+    #dailyScreen #choiceArea button {
+        margin-top: 8px !important;
+        margin-bottom: 8px !important;
+    }
+
+}
