@@ -353,41 +353,42 @@ rt {
 }
 /* =========================
    住民ごとのテーマカラー
+   ナチュラルアース
 ========================= */
 
-/* 1人目 */
+/* 1人目：テラコッタ */
 #dailyScreen.player1 {
-    border: 4px solid #ef5350;
+    border: 4px solid #B65F45;
     background-color: #fff5f5;
 }
 
-/* 2人目 */
+/* 2人目：スレートブルー */
 #dailyScreen.player2 {
-    border: 4px solid #42a5f5;
+    border: 4px solid #526F82;
     background-color: #f3f9ff;
 }
 
-/* 3人目 */
+/* 3人目：オリーブグリーン */
 #dailyScreen.player3 {
-    border: 4px solid #66bb6a;
+    border: 4px solid #647A42;
     background-color: #f4fbf4;
 }
 
-/* 4人目 */
+/* 4人目：マスタード */
 #dailyScreen.player4 {
-    border: 4px solid #ffa726;
+    border: 4px solid #B58A35;
     background-color: #fff9f0;
 }
 
-/* 5人目 */
+/* 5人目：ダスティパープル */
 #dailyScreen.player5 {
-    border: 4px solid #ab47bc;
+    border: 4px solid #80647D;
     background-color: #faf5fc;
 }
 
-/* 6人目 */
+/* 6人目：ディープティール */
 #dailyScreen.player6 {
-    border: 4px solid #26a69a;
+    border: 4px solid #397F76;
     background-color: #f2fbfa;
 }
 /* 住民の名前を目立たせる */
@@ -1028,7 +1029,7 @@ height: 500px !important;
     font-size: 70%;
 }
 #resultArea {
-    transform: translate(100px, 350px) scale(0.85);
+    transform: translate(0px, 350px) scale(0.85);
     transform-origin: top center;
 }
 #resultArea {
@@ -1100,4 +1101,150 @@ height: 500px !important;
         background-position: top center;
     }
 
+}
+/* 行動選択画面：「○○さんの番です」 */
+#dailyScreen #dailyResident {
+    background: #4a3428 !important;
+    color: white !important;
+    padding: 18px 35px;
+    border-radius: 0 !important;
+}
+/* iPad縦向け：ポイント表示の位置調整 */
+@media (min-width: 700px) and (max-width: 1100px) and (orientation: portrait) {
+
+    #dailyScreen #pointArea {
+        top: 46%;
+    }
+
+}
+/* 行動選択画面：ポイント表示の背景色 */
+#dailyScreen #pointArea p {
+    background-color: #f8f4ec !important;
+}
+/* 行動選択画面：ポイントの点数をブラウンに統一 */
+#dailyScreen #pointArea span {
+    color: #6b4a32 !important;
+}
+/* 住民ごとの識別カラー */
+#dailyScreen.player1 #dailyResident {
+    border-left: 12px solid #B65F45;
+}
+
+#dailyScreen.player2 #dailyResident {
+    border-left: 12px solid #526F82;
+}
+
+#dailyScreen.player3 #dailyResident {
+    border-left: 12px solid #647A42;
+}
+
+#dailyScreen.player4 #dailyResident {
+    border-left: 12px solid #B58A35;
+}
+
+#dailyScreen.player5 #dailyResident {
+    border-left: 12px solid #80647D;
+}
+
+#dailyScreen.player6 #dailyResident {
+    border-left: 12px solid #397F76;
+}
+/* 行動選択肢の枠線：ナチュラルアース */
+
+/* 1人目：テラコッタ */
+#dailyScreen.player1 #choiceArea button {
+    border: 4px solid #B65F45 !important;
+}
+
+/* 2人目：スレートブルー */
+#dailyScreen.player2 #choiceArea button {
+    border: 4px solid #526F82 !important;
+}
+
+/* 3人目：オリーブグリーン */
+#dailyScreen.player3 #choiceArea button {
+    border: 4px solid #647A42 !important;
+}
+
+/* 4人目：マスタード */
+#dailyScreen.player4 #choiceArea button {
+    border: 4px solid #B58A35 !important;
+}
+
+/* 5人目：ダスティパープル */
+#dailyScreen.player5 #choiceArea button {
+    border: 4px solid #80647D !important;
+}
+
+/* 6人目：ディープティール */
+#dailyScreen.player6 #choiceArea button {
+    border: 4px solid #397F76 !important;
+}
+/* 全画面共通：入力欄・プルダウンの枠線をブラウンに統一 */
+input,
+select,
+textarea {
+    border: 3px solid #6b4a32 !important;
+}
+
+/* 入力中・選択中の枠線もブラウン */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #6b4a32 !important;
+    outline: 2px solid #6b4a32 !important;
+    outline-offset: 2px;
+}
+/* ミニゲーム画面：決定ボタンを画像に変更 */
+#miniGameNextButton {
+    background-image: url("images/next.png") !important;
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-color: transparent !important;
+
+    width: 500px !important;
+    height: 500px !important;
+
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+
+    font-size: 0 !important;
+    cursor: pointer;
+}
+
+/* マウスを重ねても画像を維持 */
+#miniGameNextButton:hover {
+    background-color: transparent !important;
+}
+/* 結果発表画面：横線をホワイトベージュに */
+#resultArea hr {
+    border: none !important;
+    border-top: 2px solid #f8f4ec !important;
+}
+
+/* 結果発表画面：順位と名前をブラウンに */
+#resultArea h3 {
+    color: #6b4a32 !important;
+}
+/* 結果発表：1位の順位と名前をメタリックゴールドに */
+#resultArea h3.firstPlace {
+    background: linear-gradient(
+        to top,
+        #8B6914 0%,
+        #D4AF37 20%,
+        #FFF2A6 40%,
+        #C99824 55%,
+        #F5D76E 75%,
+        #8B6914 100%
+    ) !important;
+
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+
+    text-shadow: none !important;
 }

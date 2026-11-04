@@ -262,7 +262,7 @@ if (currentTurn === 3) {
 ruby("日常", "にちじょう") + "ターン " + currentTurn;
 
     document.getElementById("dailyResident").innerHTML =
-residentNames[currentResident-1] + " さんの番！";
+residentNames[currentResident-1] + " さんの番です";
 document.getElementById("actionPoint").innerHTML =
 residentPoints[currentResident-1].action;
 
@@ -527,7 +527,7 @@ let previousPoint = -99999;
 
         <hr>
 
-     <h3>
+   <h3 class="${rank === 1 ? 'firstPlace' : ''}">
     ${rank}位　${player.name}さん
 </h3>
 
