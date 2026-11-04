@@ -1331,7 +1331,7 @@ textarea:focus {
 @media (min-width: 700px) and (max-width: 1100px) and (orientation: portrait) {
 
     #dailyScreen #choiceArea {
-        top: 80% !important;
+        top: 90% !important;
     }
 
 }
