@@ -303,7 +303,7 @@ if(choice.disaster > 0){
 
     if(choice.happy > 0){
 
-        pointText += "ハッピー +" + choice.happy;
+        pointText += ruby("満足", "まんぞく") + choice.happy;
 
     }
 
@@ -449,7 +449,7 @@ disasterNextButton.addEventListener("click", function(){
 
     for(let i=0;i<residentTotal;i++){
 
-        // 全員ハッピー-3
+        // 全員満足-3
         residentPoints[i].happy -= 3;
 
         // 防災不足なら追加で減点
@@ -546,7 +546,7 @@ let previousPoint = -99999;
     </span>
 
     <span>
-        ハッピー：${player.happy}
+        <ruby>満足<rt>まんぞく</rt></ruby>：${player.happy}
     </span>
 
 </div>
@@ -564,7 +564,7 @@ let previousPoint = -99999;
     ${h.name}
     （<ruby>行動<rt>こうどう</rt></ruby>${h.action} /
     <ruby>防災<rt>ぼうさい</rt></ruby>${h.disaster} /
-    ハッピー${h.happy}）
+    <ruby>満足<rt>まんぞく</rt></ruby>${h.happy}）
 </li>
 
         `).join("")}
