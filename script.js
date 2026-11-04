@@ -316,7 +316,6 @@ if(choice.disaster > 0){
 
     </button>
 
-    <br><br>
     `;
 
 });

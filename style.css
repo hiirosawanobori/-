@@ -1291,7 +1291,7 @@ textarea:focus {
 @media (min-width: 700px) and (max-width: 1100px) and (orientation: portrait) {
 
     #dailyScreen #pointArea {
-        transform: translateX(-50%) scale(0.7) !important;
+        transform: translateX(-50%) scale(0.65) !important;
         transform-origin: top center;
     }
 
@@ -1302,6 +1302,28 @@ textarea:focus {
     #dailyScreen #choiceArea {
         transform: translateX(-50%) scale(0.7) !important;
         transform-origin: top center;
+    }
+
+}
+/* iPad縦画面：選択肢を左右2列に配置 */
+@media (min-width: 700px) and (max-width: 1100px) and (orientation: portrait) {
+
+    #dailyScreen #choiceArea {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+        row-gap: 30px;
+        width: 90% !important;
+    }
+
+    #dailyScreen #choiceArea button {
+        width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box;
+    }
+
+    #dailyScreen #choiceArea br {
+        display: none !important;
     }
 
 }
