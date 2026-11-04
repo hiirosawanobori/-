@@ -1327,3 +1327,11 @@ textarea:focus {
     }
 
 }
+/* iPad縦画面：ポイントエリアと選択肢の間隔を広げる */
+@media (min-width: 700px) and (max-width: 1100px) and (orientation: portrait) {
+
+    #dailyScreen #choiceArea {
+        top: 80% !important;
+    }
+
+}
